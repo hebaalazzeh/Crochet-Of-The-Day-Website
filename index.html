@@ -20,7 +20,7 @@
       rel="stylesheet"
     />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Navigation-->
@@ -108,41 +108,86 @@
     <!-- Section-->
     <section class="py-5">
       <div class="container px-4 px-lg-5 mt-5">
-        <!-- Crochet Patterns (Sample) - Replace with your daily patterns -->
         <div
-          class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+          id="patternCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-interval="5000"
         >
-          <!-- Replace this block with dynamically generated patterns -->
-          <div class="col mb-5">
-            <div class="card h-100">
-              <!-- Crochet Pattern image-->
-              <img
-                class="card-img-top"
-                src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                alt="Crochet Pattern"
-              />
-              <!-- Crochet Pattern details-->
-              <div class="card-body p-4">
-                <div class="text-center">
-                  <!-- Crochet Pattern name-->
-                  <h5 class="fw-bolder">Daily Crochet Pattern</h5>
-                  <!-- Crochet Pattern details-->
-                  FREE
-                </div>
-              </div>
-              <!-- Action button -->
-              <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                <div class="text-center">
-                  <a class="btn btn-outline-dark mt-auto" href="#"
-                    >View Pattern</a
-                  >
+          <div class="carousel-inner">
+            <!-- Pattern 1 -->
+            <div class="carousel-item active">
+              <div class="col mb-5">
+                <div class="card h-100">
+                  <img
+                    class="card-img-top"
+                    src="pattern1.jpg"
+                    alt="Pattern 1"
+                  />
+                  <div class="card-body p-4">
+                    <div class="text-center">
+                      <h5 class="fw-bolder">Pattern 1 Title</h5>
+                      Description of Pattern 1.
+                    </div>
+                  </div>
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center">
+                      <a class="btn btn-outline-dark mt-auto" href="#"
+                        >View Pattern</a
+                      >
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <!-- Pattern 2 -->
+            <div class="carousel-item">
+              <div class="col mb-5">
+                <div class="card h-100">
+                  <img
+                    class="card-img-top"
+                    src="pattern2.jpg"
+                    alt="Pattern 2"
+                  />
+                  <div class="card-body p-4">
+                    <div class="text-center">
+                      <h5 class="fw-bolder">Pattern 2 Title</h5>
+                      Description of Pattern 2.
+                    </div>
+                  </div>
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center">
+                      <a class="btn btn-outline-dark mt-auto" href="#"
+                        >View Pattern</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more carousel items for additional patterns -->
           </div>
-          <!-- End of sample block -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#patternCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#patternCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <!-- End of Crochet Patterns -->
       </div>
     </section>
     <!-- Footer-->
@@ -155,7 +200,9 @@
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="scripts.js"></script>
   </body>
 </html>
