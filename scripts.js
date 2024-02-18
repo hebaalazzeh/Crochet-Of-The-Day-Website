@@ -114,3 +114,64 @@ function createPatternCard(pattern) {
 
     return card;
 }
+
+//show new pattern for each day
+document.addEventListener("DOMContentLoaded", function () {
+    // Crochet patterns collection
+    const patterns = {
+        0: "Sunday Pattern",
+        1: "Monday Pattern",
+        2: "Tuesday Pattern",
+        3: "Wednesday Pattern",
+        4: "Thursday Pattern",
+        5: "Friday Pattern",
+        6: "Saturday Pattern"
+    };
+
+    // Get the current day of the week (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
+    const currentDay = new Date().getDay();
+
+    // Get the pattern for the current day
+    const currentPattern = patterns[currentDay];
+
+    // Display the pattern on the webpage
+    const patternElement = document.getElementById("pattern");
+    patternElement.textContent = currentPattern;
+});
+
+// JavaScript (home.js)
+
+function addPattern() {
+    // Collect pattern data from form fields
+    const patternData = {
+      description: document.getElementById('descriptionInput').value,
+      author: document.getElementById('authorInput').value,
+      email: document.getElementById('emailInput').value,
+      difficulty: document.getElementById('difficulty').value
+      // Add more fields as needed
+    };
+  
+    // Send pattern data to the server using Fetch API
+    fetch('/submit-pattern', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(patternData),
+    })
+    .then(response => {
+      if (response.ok) {
+        // Pattern submitted successfully
+        alert('Pattern submitted successfully!');
+        window.location.reload(); // Refresh the page or update pattern list
+      } else {
+        // Error handling
+        alert('Failed to submit pattern. Please try again later.');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Failed to submit pattern. Please try again later.');
+    });
+  }
+  
