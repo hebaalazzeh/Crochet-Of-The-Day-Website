@@ -86,6 +86,21 @@
     <!-- Popular Patterns Section -->
     <section class="py-5">
       <div class="container px-4 px-lg-5">
+        <h2>Popular Patterns</h2>
+        <div class="container px-4 px-lg-5">
+          <div class="row gx-4 gx-lg-5">
+            <div class="col mb-5">
+              <label for="difficultyFilter" class="form-label">Filter by Difficulty:</label>
+              <select class="form-select" id="difficultyFilter" onchange="filterPatterns()">
+                <option value="">All</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
         <div
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
         >

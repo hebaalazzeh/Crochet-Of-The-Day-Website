@@ -19,9 +19,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <li class="nav-item">
-      <a class="nav-link" href="index.html">Popular Patterns</a>
-    </li>
+
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="styles.css" rel="stylesheet" />
   </head>
@@ -86,6 +84,16 @@
               Add a Pattern
             </a>
           </form>
+          <li class="nav-item">
+            <button class="btn btn-outline-dark" onclick="login()">
+              Login
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-outline-dark" onclick="signup()">
+              Sign Up
+            </button>
+          </li>
         </div>
       </div>
     </nav>
@@ -121,73 +129,121 @@
             <!-- Pattern 1 -->
             <div class="carousel-item active">
               <div class="col mb-5">
-                <div class="card h-100">
-                  <img
-                    class="card-img-top"
-                    src="pattern1.jpg"
-                    alt="Pattern 1"
-                  />
-                  <div class="modal fade" id="patternModal" tabindex="-1" aria-labelledby="patternModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="patternModalLabel">Pattern Details</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <!-- Add pattern details here -->
-                          <img src="pattern_image.jpg" alt="Pattern Image" class="img-fluid mb-3">
-                          <p>This is the description of the pattern.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
+                <div class="card h-100" data-difficulty="beginner">
+                <img class="card-img-top" src="pattern1.jpg" alt="Pattern 1" />
+                <div
+                  class="modal fade"
+                  id="patternModal"
+                  tabindex="-1"
+                  aria-labelledby="patternModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="patternModalLabel">
+                          Pattern Details
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- Add pattern details here -->
+                        <img
+                          src="pattern_image.jpg"
+                          alt="Pattern Image"
+                          class="img-fluid mb-3"
+                        />
+                        <p>This is the description of the pattern.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
                       </div>
                     </div>
                   </div>
-                  
-                  <!-- Add this button wherever you want to trigger the modal -->
-                  <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#patternModal">
-                    View Pattern
-                  </button>
-              <!-- Add more pattern cards as needed -->
-            </div>
                 </div>
+
+                <!-- Add this button wherever you want to trigger the modal -->
+                <button
+                  type="button"
+                  class="btn btn-outline-dark"
+                  data-bs-toggle="modal"
+                  data-bs-target="#patternModal"
+                >
+                  View Pattern
+                </button>
+                <!-- Add more pattern cards as needed -->
               </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Pattern 2 -->
-            <div class="carousel-item">
-              <div class="col mb-5">
-                <div class="card h-100">
-                  <img
-                    class="card-img-top"
-                    src="pattern2.jpg"
-                    alt="Pattern 2"
-                  />
-                  <div class="modal fade" id="patternModal" tabindex="-1" aria-labelledby="patternModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="patternModalLabel">Pattern Details</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <!-- Add pattern details here -->
-                          <img src="pattern_image.jpg" alt="Pattern Image" class="img-fluid mb-3">
-                          <p>This is the description of the pattern.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                      </div>
+        <!-- Pattern 2 -->
+        <div class="carousel-item">
+          <div class="col mb-5">
+            <div class="card h-100"  data-difficulty="beginner">
+              <img class="card-img-top" src="pattern2.jpg" alt="Pattern 2" />
+              <div
+                class="modal fade"
+                id="patternModal"
+                tabindex="-1"
+                aria-labelledby="patternModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="patternModalLabel">
+                        Pattern Details
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Add pattern details here -->
+                      <img
+                        src="pattern_image.jpg"
+                        alt="Pattern Image"
+                        class="img-fluid mb-3"
+                      />
+                      <p>This is the description of the pattern.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
                     </div>
                   </div>
-                  
-                  <!-- Add this button wherever you want to trigger the modal -->
-                  <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#patternModal">
-                    View Pattern
-                  </button>
+                </div>
+              </div>
+
+              <!-- Add this button wherever you want to trigger the modal -->
+              <button
+                type="button"
+                class="btn btn-outline-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#patternModal"
+              >
+                View Pattern
+              </button>
               <!-- Add more pattern cards as needed -->
             </div>
             <!-- Add more carousel items for additional patterns -->

@@ -175,3 +175,82 @@ function addPattern() {
     });
   }
   
+  // log in authentication 
+  function login() {
+    const email = "user@example.com"; // Get email input from the user
+    const password = "password123";   // Get password input from the user
+  
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // Redirect or perform further actions
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error(errorMessage);
+      });
+  }
+  
+  function signup() {
+    const email = "user@example.com"; // Get email input from the user
+    const password = "password123";   // Get password input from the user
+  
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed up
+        const user = userCredential.user;
+        // Redirect or perform further actions
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error(errorMessage);
+      });
+  }
+  //contribute patter 
+  // Retrieve and display submitted patterns
+  // Initialize Firebase Firestore
+const db = firebase.firestore();
+document.getElementById("patternForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  // Collect pattern data from form fields
+  const name = document.getElementById("patternName").value;
+  const imageURL = document.getElementById("patternImageURL").value;
+  // Collect other pattern data as needed
+
+  // Add pattern data to Firestore collection
+  db.collection("patterns").add({
+    name: name,
+    imageURL: imageURL,
+    // Add other pattern data as fields
+  })
+  .then(function(docRef) {
+    console.log("Pattern added with ID: ", docRef.id);
+    // Optionally, display a success message to the user
+  })
+  .catch(function(error) {
+    console.error("Error adding pattern: ", error);
+    // Optionally, display an error message to the user
+  });
+});
+
+db.collection("patterns").onSnapshot(function(querySnapshot) {
+  // Clear existing pattern display
+  document.getElementById("patternDisplay").innerHTML = "";
+
+  querySnapshot.forEach(function(doc) {
+    const pattern = doc.data();
+    // Render pattern on the website (e.g., create a new pattern card)
+    const patternCard = document.createElement("div");
+    patternCard.classList.add("pattern-card");
+    patternCard.innerHTML = `
+      <h3>${pattern.name}</h3>
+      <img src="${pattern.imageURL}" alt="${pattern.name}">
+      <!-- Add other pattern details as needed -->
+    `;
+    document.getElementById("patternDisplay").appendChild(patternCard);
+  });
+});
