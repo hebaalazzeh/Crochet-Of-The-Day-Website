@@ -1,0 +1,48 @@
+.form {
+    margin-top: 30px;
+}
+
+.title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #F2CCE4;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #F2CCE4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #EDA8D0;
+}
+
+.input-toggle {
+    display: none;
+}
+
+.toggle-label {
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.pattern-description-text {
+    display: block;
+}
+
+.pattern-description-file {
+    display: none;
+}
