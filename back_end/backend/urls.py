@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
-from .blog.views import post_list
+from blog.views import post_list, post_detail
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('posts/', post_list, name='post_list'),
+     path('post/<slug:slug>/', post_detail, name='post_detail'), 
 ]
